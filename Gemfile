@@ -36,3 +36,4 @@ gem 'compass-rails'
 
 # monitoring
 gem 'newrelic_rpm'
+gem "codeclimate-test-reporter", group: :test, require: nil
