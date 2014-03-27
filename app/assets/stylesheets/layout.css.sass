@@ -18,14 +18,20 @@ p.lead
 .wraper
   +grid-column(12)
 
-.slide-1
-  background: asset-url("slide-1-bg.jpg") center center
+.box
+  background: rgba(0, 0, 0, .75)
+  padding: 1em
+
+.slide-1, .slide-2
   padding: 1em 0
+
+.slide-1
+  background: asset-url("slide-1-bg.jpg") top center
+  .minha-sampa
+    text-align: left
   .minha-sampa, .counter
     +grid-column(6)
     margin-bottom: 1.5em
-  .minha-sampa
-    text-align: left
   .counter
     .digits-and-text
       float: right
@@ -41,7 +47,25 @@ p.lead
         line-height: 39px
         font-weight: 900
         font-size: 1.75em
+        &:last-child
+          margin-right: 0
       .text
         text-transform: uppercase
         line-height: 19px
         text-align: left
+
+.slide-2
+  background: asset-url("slide-2-bg.jpg") left 40%
+
+@media (max-width: 900px)
+  .slide-1
+    .minha-sampa, .counter
+      +grid-column(12)
+      text-align: center
+      .digits-and-text
+        float: none
+        .digits, .text
+          float: none
+          text-align: center
+        .digits
+          margin-bottom: 1em
