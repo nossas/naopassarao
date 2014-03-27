@@ -41,3 +41,4 @@ group :development, :test do
 end
 
 gem 'slim-rails'
+gem 'foundation-rails'
