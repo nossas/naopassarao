@@ -19,6 +19,11 @@
 $(function(){
   $(document).foundation();
 
+  if(window.location.hash == "#gandalf"){
+    $(window.location.hash).foundation('reveal', 'open');
+    document.getElementById("gandalf-audio").play();
+  }
+
   $(window).scroll(function(){
     // Parallax
     scrollRatio = window.scrollY/$(document).height();
