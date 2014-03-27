@@ -36,4 +36,9 @@ gem 'compass-rails'
 
 # monitoring
 gem 'newrelic_rpm'
-gem "codeclimate-test-reporter", group: :test, require: nil
+
+group :test do
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem "codeclimate-test-reporter", require: false
+end

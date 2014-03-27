@@ -11,7 +11,9 @@ before_script:
 env:
   - DISPLAY=:99.0
 
-script: "CODECLIMATE_REPO_TOKEN=230c18c8de99e52184928304c7773b3db571d0f9b4c50ffbb7d9975c671bd2b2 bundle exec rspec spec"
+script:
+  - "CODECLIMATE_REPO_TOKEN=230c18c8de99e52184928304c7773b3db571d0f9b4c50ffbb7d9975c671bd2b2 bundle exec rspec spec"
+  - "CODECLIMATE_REPO_TOKEN=230c18c8de99e52184928304c7773b3db571d0f9b4c50ffbb7d9975c671bd2b2 bundle exec cucumber"
 
 branches:
   only:
