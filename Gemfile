@@ -43,3 +43,4 @@ end
 gem 'slim-rails'
 gem 'foundation-rails'
 gem 'rails_12factor'
+gem 'compass-rails'
