@@ -57,6 +57,16 @@ p.lead
 .slide-2
   background: asset-url("slide-2-bg.jpg") left 40%
 
+.slide-3
+  background: $pink
+  padding: 3em 0
+  .title
+    +grid-column(4)
+    text-align: right
+  .text
+    +grid-column(8)
+    text-align: left
+
 @media (max-width: 900px)
   .slide-1
     .minha-sampa, .counter
