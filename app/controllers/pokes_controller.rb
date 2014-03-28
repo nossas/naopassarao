@@ -1,6 +1,6 @@
 class PokesController < InheritedResources::Base
   def create
-    poke = Poke.create_from_user(permitted_params)
+    poke = Poke.create_from_user(params)
 
     PokeMailer.delay.thanks_for_poke(poke)
     PokeMailer.delay.fight_against_the_abuse_on_the_trains(poke)
