@@ -39,6 +39,7 @@ gem 'newrelic_rpm'
 
 # resources
 gem 'inherited_resources'
+gem 'gibbon'
 
 group :test do
   gem 'codeclimate-test-reporter', require: false
