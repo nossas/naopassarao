@@ -43,9 +43,6 @@ p.lead
   background: rgba(0, 0, 0, .75)
   padding: 1em
 
-.slide-1, .slide-2
-  padding: 1em 0
-
 .slide-1
   background: asset-url("slide-1-bg.jpg") top center
   .minha-sampa
@@ -75,12 +72,15 @@ p.lead
         line-height: 19px
         text-align: left
 
+.slide-1, .slide-2
+  padding: 1em 0 3em 0
+
 .slide-2
   background: asset-url("slide-2-bg.jpg") left 40%
 
 .slide-3
   background: $pink
-  padding: 3em 0
+  padding: 6em 0 8em 0
   .title
     +grid-column(4)
     text-align: right
@@ -124,6 +124,26 @@ p.lead
   .facebook-share
     margin-right: 1em
 
+form
+  background: asset-url("bg-form.png") center center
+  padding: 1.6em 1em 2em 1em
+  margin-bottom: 1em
+  +grid-column(12)
+  .button
+    width: 100%
+    text-transform: uppercase
+  .first_name_field, .last_name_field, .email_field, .submit_button
+    +grid-column(3)
+    input
+      margin: 0
+    &.error
+      input
+        border-color: red
+  .submit_button
+    input
+      font-family: inherit
+      padding: .5em
+
 
 @media (max-width: 900px)
   .slide-1
@@ -142,3 +162,15 @@ p.lead
     .title, .text
       +grid-column(12)
       text-align: center
+
+@media (max-width: 750px)
+  form
+    +grid-column(6, true, true)
+    .first_name_field, .last_name_field, .email_field, .submit_button
+      +grid-column(12)
+    .first_name_field, .last_name_field, .email_field
+      margin-bottom: 1em
+
+@media (max-width: 500px)
+  form
+    +grid-column(8, true, true)
