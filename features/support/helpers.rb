@@ -5,9 +5,9 @@ def to_url string
 end
 
 def to_field string
-  return "poke_first_name" if string == "the first name field"
-  return "poke_last_name" if string == "the last name field"
-  return "poke_email" if string == "the email field"
+  return "first_name" if string == "the first name field"
+  return "last_name" if string == "the last name field"
+  return "email" if string == "the email field"
   raise "I don't know '#{string}'"
 end
 
