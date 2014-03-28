@@ -9,5 +9,6 @@ def to_element string
   return ".slide-2" if string == "the second slide of content"
   return ".slide-3" if string == "the third slide of content"
   return ".facebook-share" if string == "the Facebook share button"
+  return ".twitter-share" if string == "the Twitter share button"
   raise "I don't know the element '#{string}'"
 end
