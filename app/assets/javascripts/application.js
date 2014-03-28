@@ -44,13 +44,18 @@ $(function(){
     return false;
   });
 
-  new_poke_y = $(".new_poke").position().top
   $(window).scroll(function(){
     // fixed form
+    if(typeof new_poke_y === "undefined")
+      new_poke_y = $(".new_poke").position().top
+
+    console.log("window.scrollY: " + window.scrollY + ", new_poke_y: " + new_poke_y);
     if(window.scrollY >= new_poke_y && $(document).width() > 735){
       $(".form_wraper").addClass("fixed");
+      $(".email_message").css("margin-top", $(".form_wraper").height() + "px");
     } else{
       $(".form_wraper").removeClass("fixed");
+      $(".email_message").css("margin-top", "0");
     }
 
     // Parallax
