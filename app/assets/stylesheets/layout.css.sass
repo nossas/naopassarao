@@ -16,6 +16,13 @@ h2
 h3
   font-size: 2em
 
+a
+  color: white
+  text-decoration: underline
+  font-weight: bold
+  &:hover
+    color: $light-gray
+
 p.lead
   color: $yellow
   font-size: 1em
@@ -80,6 +87,24 @@ p.lead
   .text
     +grid-column(8)
     text-align: left
+
+#email.reveal-modal
+  text-align: center
+  background: $yellow
+  .close-reveal-modal
+    color: black
+  p
+    color: black
+    font-size: 1.1em
+  p.lead
+    color: lighten($yellow, 45%)
+    font-weight: bold
+    text-transform: uppercase
+    text-align: left
+    font-size: 1.5em
+
+.close-reveal-modal
+  text-decoration: none
 
 #gandalf, #share
   display: none
