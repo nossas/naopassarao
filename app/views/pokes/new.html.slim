@@ -4,9 +4,9 @@
     .counter
       .digits-and-text
         .digits
-          span.digit 1
-          span.digit 2
-          span.digit 3
+          .digits
+            - Poke.count.to_s.chars.each do |c|
+              span.digit= c
         .text
           span
             | Dizem que abusadores
