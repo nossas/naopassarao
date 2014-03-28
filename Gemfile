@@ -38,6 +38,7 @@ gem 'compass-rails'
 gem 'newrelic_rpm'
 
 # resources
+gem 'delayed_job_active_record'
 gem 'inherited_resources'
 gem 'gibbon'
 
