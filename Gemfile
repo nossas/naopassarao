@@ -41,4 +41,5 @@ group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem "codeclimate-test-reporter", require: false
+  gem 'selenium-webdriver'
 end
