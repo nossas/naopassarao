@@ -41,8 +41,9 @@ gem 'newrelic_rpm'
 gem 'inherited_resources'
 
 group :test do
+  gem 'codeclimate-test-reporter', require: false
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
-  gem "codeclimate-test-reporter", require: false
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
 end
