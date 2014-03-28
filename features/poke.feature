@@ -9,8 +9,6 @@ Feature: poke
     When I press "the poke form submit button"
     Then I should be in "the homepage"
     And I should see "the share reveal"
-    # And an email called "thanks for poke" should be sent
-    # And an email called "fight against the abuse on the trains" should be sent
 
   @javascript
   Scenario: when I'm lazy and left the form blank
