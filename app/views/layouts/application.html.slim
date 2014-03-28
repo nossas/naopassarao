@@ -13,6 +13,21 @@ html
     = favicon_link_tag 'favicon.png'
     = csrf_meta_tags
   body
+    #fb-root
+      javascript:
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123808244477389"; // 270703629774561
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    
     = render partial: 'layouts/google_analytics'
     = yield
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    
+    footer
+      .row
+        .large-12.columns
+          <div class="fb-like" data-href="https://www.facebook.com/naopassarao" data-width="360" data-show-faces="true" data-send="false" data-colorscheme="dark"></div>
