@@ -6,6 +6,7 @@ class AddServerMeurioAccounts < ActiveRecord::Migration
       raise "MEURIO_ACCOUNTS_DBUSER is missing" if ENV["MEURIO_ACCOUNTS_DBUSER"].nil?
       raise "MEURIO_ACCOUNTS_DBPASS is missing" if ENV["MEURIO_ACCOUNTS_DBPASS"].nil?
       raise "DB_USERNAME is missing" if ENV["DB_USERNAME"].nil?
+      execute "CREATE EXTENSION postgres_fdw;"
       execute "CREATE SERVER meurio_accounts FOREIGN DATA WRAPPER postgres_fdw OPTIONS (dbname '#{ENV["MEURIO_ACCOUNTS_DBNAME"]}', host '#{ENV["MEURIO_ACCOUNTS_DBHOST"]}');"
       execute "CREATE USER MAPPING for #{ENV["DB_USERNAME"]} SERVER meurio_accounts OPTIONS (user '#{ENV["MEURIO_ACCOUNTS_DBUSER"]}', password '#{ENV["MEURIO_ACCOUNTS_DBPASS"]}');"
     end
@@ -13,8 +14,7 @@ class AddServerMeurioAccounts < ActiveRecord::Migration
 
   def down
     if Rails.env.production? || Rails.env.staging?
-      execute "DROP SERVER IF EXISTS meurio_accounts CASCADE;"
-      execute "DROP USER MAPPING IF EXISTS FOR #{ENV["DB_USERNAME"]} SERVER meurio_accounts;"
+        execute "DROP EXTENSION postgres_fdw CASCADE;"
     end
   end
 end
