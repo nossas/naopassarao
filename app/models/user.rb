@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :pokes
 
-  def create params
+  def self.create params
     if Rails.env.production? || Rails.env.staging?
       begin
         url = "#{ENV["ACCOUNTS_HOST"]}/users.json"
