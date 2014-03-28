@@ -49,7 +49,7 @@
   p.phone 11 3291-2802
   p Depois de ligar não esqueça de compartilhar a mobilização com seus amigos.
   = link_to "Compartilhe no Facebook", "https://www.facebook.com/sharer/sharer.php?u=#{URI::encode(root_url)}", class: ["button", "facebook-share"]
-  = link_to "Compartilhe no Twitter", "https://twitter.com/share?text=#{URI::encode(t('share.twitter.tweet'))}&hashtags=#{URI::encode('abusadoresnãopassarão')}", class: ["button", "twitter-share"]
+  = link_to "Compartilhe no Twitter", "https://twitter.com/share?url=#{URI::encode('http:bit.ly/nãopassarão')}&text=#{URI::encode(t('share.twitter.tweet'))}&hashtags=#{URI::encode('abusadoresnãopassarão')}", class: ["button", "twitter-share"]
   a.close-reveal-modal &#215;
 
 #gandalf.medium.reveal-modal{data-reveal=true}
