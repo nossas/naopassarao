@@ -9,6 +9,9 @@ class PokeMailer < ActionMailer::Base
 
   def fight_against_the_abuse_on_the_trains poke
     headers["X-MC-Tags"] = "naopassarao,fight_against_the_abuse_on_the_trains"
-    mail(to: 'Luiz Antonio Carvalho Pacheco <josias.ds@gmail.com>', subject: "Exijo que o Metrô combata ativamente o abuso sexual em vagões e estações!", from: "#{poke.first_name} #{poke.last_name} <#{poke.email}>")
+    mail(
+      subject: "Exijo que o Metrô combata ativamente o abuso sexual em vagões e estações!", 
+      from: "#{poke.first_name} #{poke.last_name} <#{poke.email}>",
+      to: TARGETS_EMAILS)
   end
 end
