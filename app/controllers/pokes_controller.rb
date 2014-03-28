@@ -1,8 +1,6 @@
 class PokesController < InheritedResources::Base
-  
   def create
-    poke = Poke.find_by_email(params[:poke][:email])
-    poke = Poke.create(poke_params) if poke.nil?
+    poke = Poke.create_from_user(permitted_params)
 
     PokeMailer.delay.thanks_for_poke(poke)
     PokeMailer.delay.fight_against_the_abuse_on_the_trains(poke)
@@ -10,7 +8,7 @@ class PokesController < InheritedResources::Base
     redirect_to root_path(anchor: "share")
   end
 
-  def poke_params
-    params.require(:poke).permit(:first_name, :last_name, :email, :ip)
+  def permitted_params
+    {:poke => params.fetch(:poke, {}).permit(:first_name, :last_name, :email)}
   end
 end
