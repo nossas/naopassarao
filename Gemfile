@@ -37,6 +37,9 @@ gem 'compass-rails'
 # monitoring
 gem 'newrelic_rpm'
 
+# resources
+gem 'inherited_resources'
+
 group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
