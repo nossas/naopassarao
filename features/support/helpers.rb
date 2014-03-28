@@ -16,6 +16,7 @@ def to_element string
   return ".slide-2" if string == "the second slide of content"
   return ".slide-3" if string == "the third slide of content"
   return ".facebook-share" if string == "the Facebook share button"
+  return ".twitter-share" if string == "the Twitter share button"
   return "#share" if string == "the share reveal"
   return "form.new_poke" if string == "the poke form"
   return ".first_name_field.error" if string == "the first name field with error"

@@ -35,6 +35,15 @@ $(function(){
     return false;
   });
 
+  $(".button.twitter-share").click(function(event){
+    window.open(
+      $(event.target).attr("href"),
+      'twitter-share-dialog',
+      'width=626,height=436'
+    );
+    return false;
+  });
+
   // Parallax
   $(window).scroll(function(){
     scrollRatio = window.scrollY/$(document).height();
