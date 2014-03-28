@@ -21,6 +21,21 @@
       p Nas últimas duas semanas, oito homens foram presos em flagrante abusando de mulheres no transporte público em São Paulo. Só este ano, já foram denunciados 26 casos. Como se não bastasse a violência vivenciada pelos passageiros diariamente, o Metrô divulgou uma propaganda inaceitável, na qual - em meio a elogios ao governo do Estado -  dizia que "trem lotado é bom para xavecar mulher". Diante da imensa pressão dos paulistanos, a propaganda foi tirada do ar. Mas isso não é o bastante.
       p Em ano eleitoral, é tristemente comum que recursos públicos sejam usados para bancar propaganda de conteúdo essencialmente político. Mas esse ano, podemos mudar essa história. O furor causado pela propaganda desastrosa do Metrô nos dá uma oportunidade única: pressionar o Metrô a investir sua verba pública de comunicação na maior campanha de prevenção ao abuso sexual já feita em São Paulo. Vamos exigir uma campanha para informar as mulheres de que abuso sexual é crime, explicar claramente como proceder em caso de ocorrência, e mandar uma mensagem clara aos possíveis abusadores: não passarão!
       p.lead Preencha o formulário abaixo para mandar um email automático ao Presidente do Metrô, Luiz Antonio Carvalho Pacheco, exigindo que a verba de comunicação seja usada para campanhas de prevenção e combate ao abuso sexual.
+  .form_wraper
+    .row
+      = form_for @poke, html: { "data-abide" => true } do |form|
+        .row
+          .first_name_field
+            = form.text_field :first_name, placeholder: "Insira seu primeiro nome", required: true
+          .last_name_field
+            = form.text_field :last_name, placeholder: "Insira seu sobrenome", required: true
+          .email_field
+            = form.email_field :email, placeholder: "Insira seu email", required: true
+          .submit_button
+            = form.submit "Enviar email", id: 'poke-submit-button', class: [:button, :radius]
+  .row.email_message
+    .wraper
+      = link_to "Quero ver o email que será enviado", "#email", "data-reveal-id" => "email", "data-reveal" => true
 
 .slide-2
   .row
