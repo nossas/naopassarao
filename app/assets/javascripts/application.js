@@ -19,13 +19,24 @@
 $(function(){
   $(document).foundation();
 
-  if(window.location.hash == "#gandalf"){
+  if(window.location.hash){
     $(window.location.hash).foundation('reveal', 'open');
-    document.getElementById("gandalf-audio").play();
+    if(window.location.hash == "#gandalf"){
+      document.getElementById("gandalf-audio").play();
+    }
   }
 
+  $(".button.facebook-share").click(function(event){
+    window.open(
+      $(event.target).attr("href"),
+      'facebox-share-dialog',
+      'width=626,height=436'
+    );
+    return false;
+  });
+
+  // Parallax
   $(window).scroll(function(){
-    // Parallax
     scrollRatio = window.scrollY/$(document).height();
     scrollProgress = ((window.scrollY/$(document).height()) * 100) + "%";
     invertedScrollProgress = (100 - ((window.scrollY/$(document).height()) * 100)) + "%";

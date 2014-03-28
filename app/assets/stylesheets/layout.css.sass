@@ -3,17 +3,28 @@ body
   text-align: center
   font-family: "Proxima Nova Soft"
 
-h2
+h2, h3
   font-family: "Brush Up"
   color: $yellow
   text-transform: uppercase
-  font-size: 2.5em
   span
     color: white
+
+h2
+  font-size: 2.5em
+
+h3
+  font-size: 2em
 
 p.lead
   color: $yellow
   font-size: 1em
+
+.button
+  text-transform: uppercase
+
+.button.facebook-share
+  background: $facebook-blue
 
 .wraper
   +grid-column(12)
@@ -67,8 +78,22 @@ p.lead
     +grid-column(8)
     text-align: left
 
-#gandalf
+#gandalf, #share
   display: none
+
+#gandalf.reveal-modal
+  background: none !important
+  border: none !important
+
+#share
+  p
+    color: #333
+    &.phone
+      font-family: "Brush Up"
+      font-size: 2.5em
+  .button
+    margin: 0
+
 
 @media (max-width: 900px)
   .slide-1
