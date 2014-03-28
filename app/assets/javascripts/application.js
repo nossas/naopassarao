@@ -44,8 +44,16 @@ $(function(){
     return false;
   });
 
-  // Parallax
+  new_poke_y = $(".new_poke").position().top
   $(window).scroll(function(){
+    // fixed form
+    if(window.scrollY >= new_poke_y && $(document).width() > 735){
+      $(".form_wraper").addClass("fixed");
+    } else{
+      $(".form_wraper").removeClass("fixed");
+    }
+
+    // Parallax
     scrollRatio = window.scrollY/$(document).height();
     scrollProgress = ((window.scrollY/$(document).height()) * 100) + "%";
     invertedScrollProgress = (100 - ((window.scrollY/$(document).height()) * 100)) + "%";
