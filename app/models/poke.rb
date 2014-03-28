@@ -6,6 +6,7 @@ class Poke < ActiveRecord::Base
   after_create { self.delay.add_to_mailchimp_segment }
 
   def self.create_from_user params
+    logger.info("Poke.create_from_user params: #{params.inspect}")
     user = User.find_by_email(params[:poke][:email])
     user = User.create(params[:poke]) if user.nil?
     Poke.where("user_id = ?", user.id).first_or_create(user_id: user.id)
