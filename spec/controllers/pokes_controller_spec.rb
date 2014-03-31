@@ -7,7 +7,7 @@ describe PokesController do
 
       it "should create a poke for this user" do
         expect {
-          post(:create, poke: { first_name: @user.first_name, last_name: @user.last_name, email: @user.email })
+          post(:create, first_name: @user.first_name, last_name: @user.last_name, email: @user.email)
         }.to change{@user.pokes.count}.by(1)
       end
 
@@ -16,7 +16,7 @@ describe PokesController do
 
         it "should not create a poke for this user" do
           expect {
-            post(:create, poke: { first_name: @user.first_name, last_name: @user.last_name, email: @user.email })
+            post(:create, first_name: @user.first_name, last_name: @user.last_name, email: @user.email)
           }.to_not change{@user.pokes.count}
         end
       end
@@ -25,13 +25,13 @@ describe PokesController do
     context "when there is no user with the same email" do
       it "should create a new user" do
         expect {
-          post(:create, poke: { first_name: "Nícolas", last_name: "Iensen", email: "nicolas@test.com" })
+          post(:create, first_name: "Nícolas", last_name: "Iensen", email: "nicolas@test.com")
         }.to change{User.count}.by(1)
       end
 
       it "should create a new poke" do
         expect {
-          post(:create, poke: { first_name: "Nícolas", last_name: "Iensen", email: "nicolas@test.com" })
+          post(:create, first_name: "Nícolas", last_name: "Iensen", email: "nicolas@test.com")
         }.to change{Poke.count}.by(1)
       end
     end
