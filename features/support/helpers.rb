@@ -8,6 +8,7 @@ def to_field string
   return "first_name" if string == "the first name field"
   return "last_name" if string == "the last name field"
   return "email" if string == "the email field"
+  return "phone_number" if string == "the phone number field"
   raise "I don't know '#{string}'"
 end
 
@@ -22,6 +23,7 @@ def to_element string
   return ".first_name_field.error" if string == "the first name field with error"
   return ".last_name_field.error" if string == "the last name field with error"
   return ".email_field.error" if string == "the email field with error"
+  return ".call-successful-message" if string == "the call successful message"
   raise "I don't know the element '#{string}'"
 end
 
@@ -34,5 +36,6 @@ end
 
 def to_button string
   return "poke-submit-button" if string == "the poke form submit button"
+  return "call-submit-button" if string == "the call form submit button"
   raise "I don't know '#{string}'"
 end

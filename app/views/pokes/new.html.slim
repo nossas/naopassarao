@@ -70,6 +70,12 @@
   h3 Valeu! Agora que você já mandou seu e-mail, que tal aumentar ainda mais a pressão e falar com o Metrô por telefone também?
   p Esse é o número do gabinete do presidente do Metrô. Dê uma ligada pra ele e diga que desculpas vazias não são suficientes. Exija também que eles façam a maior campanha de prevenção do abuso sexual já vista em São Paulo.
   p.phone 11 3291-2802
+  - if session[:call_id].nil?
+    = form_for Call.new do |f|
+      = text_field_tag :phone_number
+      = f.submit "Ligar", id: "call-submit-button"
+  - else
+    .call-successful-message Obrigado por ligar!
   p Depois de ligar não esqueça de compartilhar a mobilização com seus amigos.
   = link_to "Compartilhe no Facebook", "https://www.facebook.com/sharer/sharer.php?u=#{URI::encode(root_url)}", class: ["button", "facebook-share"]
   = link_to "Compartilhe no Twitter", "https://twitter.com/share?url=#{URI::encode('http:bit.ly/nãopassarão')}&text=#{URI::encode(t('share.twitter.tweet'))}&hashtags=#{URI::encode('abusadoresnãopassarão')}", class: ["button", "twitter-share"]
