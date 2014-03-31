@@ -24,6 +24,7 @@ def to_element string
   return ".last_name_field.error" if string == "the last name field with error"
   return ".email_field.error" if string == "the email field with error"
   return ".call-successful-message" if string == "the call successful message"
+  return "input#phone_number[data-invalid]" if string == "the phone field error message"
   raise "I don't know the element '#{string}'"
 end
 

@@ -129,9 +129,9 @@ p.lead
   .facebook-share
     margin-right: 1em
 
-form
-  background: asset-url("bg-form.png") center center
+form.new_poke
   padding: 1.6em 1em 2em 1em
+  background: asset-url("bg-form.png") center center
   margin-bottom: 1em
   +grid-column(12)
   .button
@@ -141,14 +141,14 @@ form
     +grid-column(3)
     input
       margin: 0
-    &.error
-      input
-        border-color: red
   .submit_button
     input
       font-family: inherit
       padding: .5em
 
+form
+  input[data-invalid]
+    border-color: red
 
 @media (max-width: 900px)
   .slide-1
