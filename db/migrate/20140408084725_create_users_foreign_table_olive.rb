@@ -1,9 +1,9 @@
 class CreateUsersForeignTableOlive < ActiveRecord::Migration
   def up
     if Rails.env.production? || Rails.env.staging?
-      # execute 'DROP FOREIGN TABLE users;'
+      execute 'DROP FOREIGN TABLE IF EXISTS users;'
     else
-      execute 'DROP TABLE users;'
+      execute 'DROP TABLE IF EXISTS users;'
     end
 
     if Rails.env.production? || Rails.env.staging?
@@ -15,9 +15,9 @@ class CreateUsersForeignTableOlive < ActiveRecord::Migration
         last_name character varying(255) NOT NULL,
         email character varying(255) NOT NULL,
         cpf character varying(255),
-        birthday date NOT NULL,
-        address_street character varying(255) NOT NULL,
-        address_extra character varying(255) NOT NULL,
+        birthday date,
+        address_street character varying(255),
+        address_extra character varying(255),
         address_number character varying(255),
         address_district character varying(255),
         city character varying(255),
@@ -35,7 +35,7 @@ class CreateUsersForeignTableOlive < ActiveRecord::Migration
         t.string :last_name, null: false
         t.string :email, null: false
         t.string :cpf
-        t.date   :birthday, null: false
+        t.date   :birthday
         t.string :address_street
         t.string :address_extra
         t.string :address_number
