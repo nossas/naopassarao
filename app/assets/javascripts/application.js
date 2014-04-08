@@ -19,6 +19,8 @@
 $(function(){
   $(document).foundation();
 
+  $('#victory').foundation('reveal', 'open');
+
   if(window.location.hash){
     $(window.location.hash).foundation('reveal', 'open');
     if(window.location.hash == "#gandalf"){
