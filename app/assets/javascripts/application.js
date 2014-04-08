@@ -19,6 +19,8 @@
 $(function(){
   $(document).foundation();
 
+  // Victory disables form and shows popup
+  $("form#new_poke input").attr('disabled', true);
   $('#victory').foundation('reveal', 'open');
 
   if(window.location.hash){
